@@ -1,0 +1,21 @@
+<h2>employee list</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor = "let employee of employees">   <!-- /employees is an array which should define in component/ -->
+           <td>{{ employee.name}}</td>
+           <td>{{ employee.department}}</td>
+           <td>
+            <button (click)="updateEmployee(employee.id)" class = "btn btn-info">Update</button>
+            <button (click)="deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px">delete</button>
+            <button (click)="employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10px">view</button>
+           </td>
+        </tr>
+    </tbody>
+</table>
